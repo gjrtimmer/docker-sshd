@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Collecting Container IP
-echo "Container IP: $(ip addr | grep "inet" |grep -Fv 127.0.0.1 |grep -Fv ::1 |awk '{print $2}'| grep -Eo '([0-9]{1,3}\.){3}[0-9]{1,3}?')"
+#echo "Container IP: $(ip addr | grep "inet" |grep -Fv 127.0.0.1 |grep -Fv ::1 |awk '{print $2}'| grep -Eo '([0-9]{1,3}\.){3}[0-9]{1,3}?')"
 
 trap "echo SIGINT; exit" SIGINT
 trap "echo SIGTERM; exit" SIGTERM
