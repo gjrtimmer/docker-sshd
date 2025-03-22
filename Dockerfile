@@ -5,7 +5,7 @@ ENV SSH_USERNAME="ubuntu"
 
 # Install openssh-server
 RUN apt-get update && \
-    apt-get install -y iproute2 iputils-ping openssh-server && \
+    apt-get install -y iproute2 iputils-ping openssh-server sudo && \
     apt-get autoremove -y && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
