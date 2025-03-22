@@ -20,7 +20,8 @@ RUN mkdir -p /run/sshd && \
     chown "${SSH_USERNAME}:${SSH_USERNAME}" "/home/${SSH_USERNAME}/.ssh" && \
     chmod 700 "/home/${SSH_USERNAME}/.ssh" && \
     echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config && \
-    echo "PermitRootLogin no" >> /etc/ssh/sshd_config
+    echo "PermitRootLogin no" >> /etc/ssh/sshd_config && \
+    echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 COPY --chmod=755 entrypoint.sh /entrypoint.sh
 
